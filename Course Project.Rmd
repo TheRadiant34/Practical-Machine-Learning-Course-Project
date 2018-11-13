@@ -1,6 +1,8 @@
 ---
 title: "Practical Machine Learning Course Project"
-output: html_document
+output: 
+  html_document: 
+    keep_md: yes
 ---
 #Practical Machine Learning Course Project
 
@@ -90,7 +92,7 @@ confusionMatrix(testing.set$classe, predict.test.gbm)
 ## Random Forest Model
 
 Has an accuracy of 99.8%. Because of this accuracy this is the model that will be used to compare to the testing data.
-```{r random forest, cache= TRUE}
+```{r random forest}
 set.seed(430)
 model.fit.rf<- train(classe ~., data= training.set, method ="rf", trControl = cross.val)
 
